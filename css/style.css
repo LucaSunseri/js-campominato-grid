@@ -10,6 +10,33 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.btn-grad {background: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+
+.btn-grad {
+  margin: 10px;
+  padding: 5px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
+
 /* HEADER */
 header {
   display: flex;
@@ -41,22 +68,35 @@ main {
 }
 
 main span {
-  display: none;
   font-size: 25px;
   font-weight: 600;
 }
 
 .game-container {
-  display: flex;
-  flex-wrap: wrap;
   height: 350px;
   width: 400px;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
-.game-container .square{
+.square {
+  float: left;
   width: calc(100% / 8);
   height: calc(100% / 8);
   background: red;
   border: 1px solid black;
+}
+
+.easy {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+
+.hard {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.crazy {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
 }
