@@ -12,17 +12,18 @@ bntPlayGame.addEventListener('click',function() {
   title.classList.add('d-none');
 
   gameContainer.classList.remove('d-none');
+  gameContainer.innerHTML = '';
 
 
   if (leavelDifficulty.value === '1') {
     console.log('easy');
-    howManySquare(gameContainer,'easy', 49);
+    howManySquare(gameContainer,'square easy', 49);
   } else if (leavelDifficulty.value === '2') {
     console.log('hard');
-    howManySquare(gameContainer,'hard', 81);
+    howManySquare(gameContainer,'square hard', 81);
   } else if (leavelDifficulty.value === '3') {
     console.log('crazy');
-    howManySquare(gameContainer,'crazy', 100);
+    howManySquare(gameContainer,'square crazy', 100);
   } else {
     title.classList.remove('d-none');
     gameContainer.classList.add('d-none');
@@ -32,23 +33,32 @@ bntPlayGame.addEventListener('click',function() {
 
 
 /**
- * Funziona che genera quadrati all'interno del div selezionato
- * @param {div} where 
+ * Funzione che crea un quadrato con una classe e lo inserisce nell'elemento HTML scelto
+ * @param {div} elementInHtml 
+ * @param {string} className 
+ * @returns Elemento creato
  */
  function createSquare(elementInHtml, className) {
   const square = document.createElement('div');
-  square.className = 'square';
-  square.classList.add(className);
+  square.className = className;
   elementInHtml.append(square);
+  return square;
 }
 
 /**
- * Funzione che genera un max numero di quadrati
- * @param {Number} max 
+ * Funzione che genera un numero max di quadrati 
+ * @param {div} elementInHtml 
+ * @param {string} className 
+ * @param {number} max 
  */
 function howManySquare (elementInHtml, className, max) {
   for (let i = 0; i < max; i++) {
-    createSquare(elementInHtml, className);
+    square = createSquare(elementInHtml, className);
+    square.innerHTML += [i+1];
+
+    square.addEventListener('click',function() {
+      this.classList.add('clicked');
+    })
   }
 }
 

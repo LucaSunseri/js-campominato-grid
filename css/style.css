@@ -65,6 +65,7 @@ main {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 80px);
+  z-index: 888;
 }
 
 main span {
@@ -80,21 +81,31 @@ main span {
 
 .square {
   float: left;
-  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
 }
 
-.easy {
+.square:hover {
+  cursor: pointer;
+}
+
+.square.clicked {
+  background-color: blue;
+}
+
+.square.easy {
   width: calc(100% / 7);
   height: calc(100% / 7);
 }
 
-.hard {
+.square.hard {
   width: calc(100% / 9);
   height: calc(100% / 9);
 }
 
-.crazy {
+.square.crazy {
   width: calc(100% / 10);
   height: calc(100% / 10);
 }
