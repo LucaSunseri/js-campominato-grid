@@ -80,8 +80,6 @@ main span {
 
 .square {
   float: left;
-  width: calc(100% / 8);
-  height: calc(100% / 8);
   background: red;
   border: 1px solid black;
 }
