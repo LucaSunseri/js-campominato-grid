@@ -56,6 +56,11 @@ header {
   font-size: 30px;
   font-weight: bold;
   margin-left: 5px;
+  vertical-align: middle;
+}
+
+.header__right {
+  text-align: center;
 }
 
 /* MAIN */ 
@@ -68,6 +73,7 @@ main {
 }
 
 main span {
+  text-align: center;
   font-size: 25px;
   font-weight: 600;
 }
@@ -75,7 +81,6 @@ main span {
 .game-container {
   height: 350px;
   width: 400px;
-  border: 1px solid black;
 }
 
 .square {
@@ -88,10 +93,12 @@ main span {
 
 .square:hover {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
 .square.clicked {
   background-color: rgba(45, 45, 255, 0.685);
+  color: #fff;
 }
 
 .square.easy {
@@ -107,6 +114,10 @@ main span {
 .square.crazy {
   width: calc(100% / 10);
   height: calc(100% / 10);
+}
+
+.bomb {
+  background-color: red !important;
 }
 
 /* FOOTER */
