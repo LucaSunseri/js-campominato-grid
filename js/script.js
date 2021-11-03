@@ -43,7 +43,7 @@ bntPlayGame.addEventListener('click',function() {
   square.className = className;
   elementInHtml.append(square);
   return square;
-}
+};
 
 /**
  * Funzione che genera un numero max di quadrati 
@@ -57,10 +57,10 @@ function howManySquare (elementInHtml, className, max) {
     square.innerHTML += [i+1];
 
     square.addEventListener('click',function() {
-      this.classList.add('clicked');
-    })
-  }
-}
+      this.classList.toggle('clicked');
+    });
+  };
+};
 
 
 
